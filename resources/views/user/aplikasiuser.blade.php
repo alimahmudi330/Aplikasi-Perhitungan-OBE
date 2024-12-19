@@ -36,21 +36,6 @@
         </div>
       </nav>
 
-      <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="card" style="width: 100rem;">
-          <div class="row g-0">
-            <div class="col-md-6 d-flex align-items-center">
-              <div class="card-body">
-                <h5 class="card-title">Asri Pigura</h5>
-                <p class="card-text">Menghadirkan untuk Anda bingkai karya seni yang dirancang dengan keahlian tinggi dan penelitian mendalam, mencerminkan estetika dan fungsionalitas. Cocok untuk mempercantik ruangan, memajang foto kenangan, karya seni, atau sertifikat berharga Anda.</p>
-                <a href="loginuser" class="btn btn-primary">Aplikasi Perhitungan OBE</a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <img src="img/1.jpg" class="card-img-top" alt="...">
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
 </body>
 </html>
