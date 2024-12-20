@@ -10,20 +10,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="dashboard">OBE</a>
+          <a class="navbar-brand" href="dashboard">ASRI PIGURA</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="dashboard">Home</a>
+                <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="about">About</a>
+                <a class="nav-link active" aria-current="page" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="introduction">Introduction</a>
+                <a class="nav-link active" aria-current="page" href="/introduction">Introduction</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Login</a>
@@ -43,7 +43,7 @@
               <div class="card-body">
                 <h5 class="card-title">Asri Pigura</h5>
                 <p class="card-text">Menghadirkan untuk Anda bingkai karya seni yang dirancang dengan keahlian tinggi dan penelitian mendalam, mencerminkan estetika dan fungsionalitas. Cocok untuk mempercantik ruangan, memajang foto kenangan, karya seni, atau sertifikat berharga Anda.</p>
-                <a href="loginuser" class="btn btn-primary">Aplikasi Perhitungan OBE</a>
+                <a href="aplikasiuser" class="btn btn-primary">Aplikasi Perhitungan OBE</a>
               </div>
             </div>
             <div class="col-md-6">

@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="dashboard">OBE</a>
+          <a class="navbar-brand" href="dashboard">ASRI PIGURA</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -41,22 +41,31 @@
           <div class="row g-0">
             <div class="card-body">
             <h2 class="text-2xl font-semibold text-black dark:text-white">
-                Instruction
+               Proses Pembuatan Bingkai Foto
             </h2>
-
-            <!-- Paragraf Teks -->
-            <p class="mt-4 text-base/relaxed text-gray-700 dark:text-white" style="text-align: justify;">
-                Operasi Baris Elementer: Adalah serangkaian manipulasi yang dilakukan pada baris-baris suatu matriks untuk mengubahnya menjadi bentuk eselon baris atau bentuk eselon baris tereduksi. Operasi ini sering digunakan untuk menyelesaikan sistem persamaan linear, mencari invers matriks, dan lain-lain.
-            </p>
+            <div class="col-md-15">
+              <img src="img/6.png" class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
+        <div class="card" style="width: 50rem;">
+          <div class="row g-0">
+            <div class="card-body">
+            <h2 class="text-2xl font-semibold text-black dark:text-white">
+               Proses Pembuatan Bingkai Cermin
+            </h2>
+            <div class="col-md-15">
+              <img src="img/7.png" class="card-img-top" alt="...">
+            </div>
         </div>
     </div>
 </div>
 </div>
 </div>
-
-
 </div>
 </div>
-
 </body>
 </html>
