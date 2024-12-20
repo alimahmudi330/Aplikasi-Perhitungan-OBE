@@ -35,7 +35,6 @@
           </div>
         </div>
       </nav>
-
       <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="card" style="width: 50rem;">
           <div class="row g-0">
@@ -62,7 +61,35 @@
             </div>
         </div>
     </div>
+  </div>
 </div>
+<div class="container d-flex justify-content-center align-items-center" style="height: 108vh;">
+        <div class="card" style="width: 50rem;">
+          <div class="row g-0">
+            <div class="card-body">
+            <h2 class="text-2xl font-semibold text-black dark:text-white">
+               Proses Pembuatan Bingkai Jam Dinding
+            </h2>
+            <div class="col-md-15">
+              <img src="img/8.png" class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container d-flex justify-content-center align-items-center" style="height: 45vh;">
+        <div class="card" style="width: 50rem;">
+          <div class="row g-0">
+            <div class="card-body">
+            <h2 class="text-2xl font-semibold text-black dark:text-white">
+               Proses Pembuatan Rak Dinding
+            </h2>
+            <div class="col-md-15">
+              <img src="img/9.png" class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
