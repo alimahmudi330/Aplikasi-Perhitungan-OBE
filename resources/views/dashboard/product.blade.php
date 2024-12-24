@@ -20,8 +20,9 @@
         }
 
         .card-img-top {
+            border-bottom: 3px solid #f8f9fa;
             object-fit: cover;
-            height: 100%;
+            height: 200px;
         }
 
         .card-body {
@@ -29,14 +30,18 @@
         }
 
         .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.25rem;
             color: #6c757d;
+            margin-bottom: 1.5rem;
         }
 
-        .card-text {
-            font-size: 1rem;
-            color: #495057;
+        .container {
+            margin-top: 30px;
+        }
+
+        .col-md-4 {
+            flex: 1;
+            margin: 0 15px;
         }
     </style>
 </head>
@@ -78,19 +83,40 @@
         </div>
     </nav>
 
-    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="card" style="width: 100%; max-width: 1200px;">
-            <div class="row g-0">
-                <div class="col-md-6 d-flex align-items-center">
+    <div class="container">
+        <h2 class="text-center mb-5">Produk Kami</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/9.png" class="card-img-top" alt="Bingkai">
                     <div class="card-body">
-                        <h5 class="card-title">Asri Pigura</h5>
+                        <h5 class="card-title">Bingkai foto Kecil</h5>
                         <p class="card-text">
-                            Menghadirkan untuk Anda bingkai karya seni yang dirancang dengan keahlian tinggi dan penelitian mendalam, mencerminkan estetika dan fungsionalitas. Cocok untuk mempercantik ruangan, memajang foto kenangan, karya seni, atau sertifikat berharga Anda.
+                            Bingkai foto kecil ini dapat digunakan untuk menghias foto-foto kecil
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="img/1.jpg" class="card-img-top" alt="...">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/9.png" class="card-img-top" alt="Bingkai">
+                    <div class="card-body">
+                        <h5 class="card-title">Bingkai foto Kecil</h5>
+                        <p class="card-text">
+                            Bingkai foto kecil ini dapat digunakan untuk menghias foto-foto kecil
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/9.png" class="card-img-top" alt="Bingkai">
+                    <div class="card-body">
+                        <h5 class="card-title">Bingkai foto Kecil</h5>
+                        <p class="card-text">
+                            Bingkai foto kecil ini dapat digunakan untuk menghias foto-foto kecil
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,4 +124,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
