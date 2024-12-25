@@ -7,9 +7,15 @@
     <title>Dashboard Admin</title>
 </head>
 <body>
-    <h1 class="text-center my-4">Dashboard Admin</h1>
-    <p class="text-center">Selamat datang di dashboard admin!</p>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">admin</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    <h1 class="text-center my-4">Selamat Datang Di Halaman Admin!</h1>
+</div>
+</nav>
     <!-- Form Input Bahan Baku -->
     <div class="container mt-5">
         <h1 class="mb-4">Input Bahan Baku</h1>
@@ -130,5 +136,6 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFyD6jtyF7gXe0F5YwFu2OeDOeF1YkzO27p03D2C5IS8nEgx2Im9iT" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhG81rKrAAd3xyT4GO7aonE6paj4lzo14I7Ry0Qcql1LKA/8xU91F1KNj0gD" crossorigin="anonymous"></script>
+
 </body>
 </html>

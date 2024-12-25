@@ -94,5 +94,10 @@
     </div>
 </div>
 </div>
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="text-center p-3">
+        © 2024 Aplikasi Perhitungan OBE
+    </div>
+</footer>
 </body>
 </html>
