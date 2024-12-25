@@ -16,50 +16,52 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="dashboard">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="introduction">Introduction</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Registrasi</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="dashboard">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="introduction">Introduction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/product">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/aplikasiuser">Estimasi</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/register">Registrasi</a>
+                </li>
             </ul>
           </div>
         </div>
       </nav>
       <!-- Content -->
     <div class="container mt-5">
-        <h1 class="mb-4">Form Input Estimasi Kebutuhan Bahan</h1>
+        <h1 class="mb-4">Input Bahan Baku</h1>
         <form action="{{ route('estimasi.hitung') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="jumlah_foto" class="form-label">Jumlah Bingkai Foto</label>
-                <input type="number" id="jumlah_foto" name="jumlah_foto" class="form-control" required>
+                <label for="balok_kayu" class="form-label">Balok Kayu (cm):</label>
+                <input type="number" id="balok_kayu" name="balok_kayu" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="jumlah_cermin" class="form-label">Jumlah Bingkai Cermin</label>
-                <input type="number" id="jumlah_cermin" name="jumlah_cermin" class="form-control" required>
+                <label for="lem" class="form-label">Lem (ml):</label>
+                <input type="number" id="lem" name="lem" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="jumlah_jam" class="form-label">Jumlah Bingkai Jam Dinding</label>
-                <input type="number" id="jumlah_jam" name="jumlah_jam" class="form-control" required>
+                <label for="cat" class="form-label">Cat (ml):</label>
+                <input type="number" id="cat" name="cat" class="form-control" required>
             </div>
-
-            <div class="mb-3">
-                <label for="jumlah_rak" class="form-label">Jumlah Rak Dinding</label>
-                <input type="number" id="jumlah_rak" name="jumlah_rak" class="form-control" required>
-            </div>
-
             <button type="submit" class="btn btn-primary">Hitung Kebutuhan</button>
         </form>
 
@@ -74,50 +76,42 @@
                 </thead>
                 <tbody>
                   <tr>
-                      <td>Bingkai Foto</td>
-                      <td>{{ $jumlahFoto ?? 0 }}</td>
+                      <td>Balok Kayu (cm)</td>
+                      <td>{{ $balok_kayu ?? 0 }}</td>
                   </tr>
                   <tr>
-                      <td>Bingkai Cermin</td>
-                      <td>{{ $jumlahCermin ?? 0 }}</td>
+                      <td>Lem (ml)</td>
+                      <td>{{ $lem ?? 0 }}</td>
                   </tr>
                   <tr>
-                      <td>Bingkai Jam Dinding</td>
-                      <td>{{ $jumlahJam ?? 0 }}</td>
-                  </tr>
-                  <tr>
-                      <td>Rak Dinding</td>
-                      <td>{{ $jumlahRak ?? 0 }}</td>
+                      <td>Cat (ml)</td>
+                      <td>{{ $cat ?? 0 }}</td>
                   </tr>
                 </tbody>
             </table>
         <!-- Tampilkan Hasil Inputan dan Estimasi -->
-        @if(isset($totalBalokKayu) && isset($totalCat) && isset($totalCermin) && isset($totalKaca))
+        @if(isset($jumlahBingkaiKecil) && isset($jumlahBingkaiSedang) && isset($jumlahBingkaiBesar))
         <div class="mt-5">
-            <h2>Hasil Estimasi Kebutuhan Bahan</h2>
+            <h2>Hasil Estimasi Jumlah Bingkai Foto</h2>
             <table class="table table-bordered mt-3">
                 <thead>
                     <tr>
-                        <th>Bahan</th>
-                        <th>Total Kebutuhan</th>
+                        <th>Ukuran Bingkai</th>
+                        <th>Jumlah Bingkai</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Balok Kayu (cm)</td>
-                        <td>{{ $totalBalokKayu }}</td>
+                        <td>Bingkai Foto Kecil</td>
+                        <td>{{ $jumlahBingkaiKecil }}</td>
                     </tr>
                     <tr>
-                        <td>Cat (ml)</td>
-                        <td>{{ $totalCat }}</td>
+                        <td>Bingkai Foto Sedang</td>
+                        <td>{{ $jumlahBingkaiSedang }}</td>
                     </tr>
                     <tr>
-                        <td>Cermin (cm)</td>
-                        <td>{{ $totalCermin }}</td>
-                    </tr>
-                    <tr>
-                        <td>Kaca (cm)</td>
-                        <td>{{ $totalKaca }}</td>
+                        <td>Bingkai Foto Besar</td>
+                        <td>{{ $jumlahBingkaiBesar }}</td>
                     </tr>
                 </tbody>
             </table>

@@ -6,59 +6,83 @@ use Illuminate\Http\Request;
 
 class EstimationController extends Controller
 {
-    public function index()
-{
-    return view('user.aplikasiuser', [
-        'jumlahFoto' => 0,
-        'jumlahCermin' => 0,
-        'jumlahJam' => 0,
-        'jumlahRak' => 0,
-    ]);
-}
+    public function hitungEstimasi(Request $request)
+    {
+        // Jika ada permintaan POST, lakukan perhitungan
+        if ($request->isMethod('post')) {
+            // Ambil input bahan baku dari user
+            $balok_kayu = $request->input('balok_kayu');
+            $lem = $request->input('lem');
+            $cat = $request->input('cat');
 
-public function hitungEstimasi(Request $request)
-{
-    $jumlahFoto = $request->input('jumlah_foto', 0); // Default to 0 if null
-    $jumlahCermin = $request->input('jumlah_cermin', 0);
-    $jumlahJam = $request->input('jumlah_jam', 0);
-    $jumlahRak = $request->input('jumlah_rak', 0);
+            // Matriks koefisien dari persamaan
+            // Setiap ukuran bingkai membutuhkan jumlah bahan baku tertentu
+            $A = [
+                [120, 180, 240], // Balok Kayu
+                [8, 10, 15],     // Lem
+                [12, 15, 20],    // Cat
+            ];
 
-    $kebutuhan = [
-        'foto' => ['balok_kayu' => 140, 'cat' => 100, 'cermin' => 0, 'kaca' => 40],
-        'cermin' => ['balok_kayu' => 140, 'cat' => 100, 'cermin' => 40, 'kaca' => 0],
-        'jam' => ['balok_kayu' => 260, 'cat' => 150, 'cermin' => 0, 'kaca' => 100],
-        'rak' => ['balok_kayu' => 450, 'cat' => 250, 'cermin' => 0, 'kaca' => 0],
-    ];
+            // Matriks hasil (stok bahan baku yang tersedia)
+            $B = [$balok_kayu, $lem, $cat];
 
-    $totalBalokKayu = ($kebutuhan['foto']['balok_kayu'] * $jumlahFoto) +
-                      ($kebutuhan['cermin']['balok_kayu'] * $jumlahCermin) +
-                      ($kebutuhan['jam']['balok_kayu'] * $jumlahJam) +
-                      ($kebutuhan['rak']['balok_kayu'] * $jumlahRak);
+            // Metode Gauss-Jordan untuk menyelesaikan sistem persamaan linear
+            $result = $this->gaussJordan($A, $B);
 
-    $totalCat = ($kebutuhan['foto']['cat'] * $jumlahFoto) +
-                ($kebutuhan['cermin']['cat'] * $jumlahCermin) +
-                ($kebutuhan['jam']['cat'] * $jumlahJam) +
-                ($kebutuhan['rak']['cat'] * $jumlahRak);
+            // Kirimkan hasil ke view
+            return view('user.aplikasiuser', [
+                'balok_kayu' => $balok_kayu,
+                'lem' => $lem,
+                'cat' => $cat,
+                'jumlahBingkaiKecil' => $result[0],
+                'jumlahBingkaiSedang' => $result[1],
+                'jumlahBingkaiBesar' => $result[2],
+            ]);
+            // Redirect ke halaman admin.dashboard setelah menghitung
+            //return redirect()->route('admin.dashboard')->with('success', 'Kebutuhan berhasil dihitung!');
+        }
 
-    $totalCermin = ($kebutuhan['foto']['cermin'] * $jumlahFoto) +
-                   ($kebutuhan['cermin']['cermin'] * $jumlahCermin) +
-                   ($kebutuhan['jam']['cermin'] * $jumlahJam) +
-                   ($kebutuhan['rak']['cermin'] * $jumlahRak);
+        return view('user.aplikasiuser');
+    }
 
-    $totalKaca = ($kebutuhan['foto']['kaca'] * $jumlahFoto) +
-                 ($kebutuhan['cermin']['kaca'] * $jumlahCermin) +
-                 ($kebutuhan['jam']['kaca'] * $jumlahJam) +
-                 ($kebutuhan['rak']['kaca'] * $jumlahRak);
+    private function gaussJordan($A, $B)
+    {
+        // Menyusun matriks augmented (A|B)
+        $n = count($A);
+        for ($i = 0; $i < $n; $i++) {
+            array_push($A[$i], $B[$i]);
+        }
 
-    return view('user.aplikasiuser', compact(
-        'totalBalokKayu', 
-        'totalCat', 
-        'totalCermin', 
-        'totalKaca', 
-        'jumlahFoto', 
-        'jumlahCermin', 
-        'jumlahJam', 
-        'jumlahRak'
-    ));
-}
+        // Eliminasi Gauss-Jordan
+        for ($i = 0; $i < $n; $i++) {
+            // Membagi baris dengan elemen diagonal (pivot)
+            $pivot = $A[$i][$i];
+            if ($pivot == 0) {
+                throw new \Exception("Pivot nol ditemukan.");
+            }
+
+            // Normalisasi baris pivot
+            for ($j = 0; $j < $n + 1; $j++) {
+                $A[$i][$j] /= $pivot;
+            }
+
+            // Eliminasi kolom
+            for ($k = 0; $k < $n; $k++) {
+                if ($k != $i) {
+                    $factor = $A[$k][$i];
+                    for ($j = 0; $j < $n + 1; $j++) {
+                        $A[$k][$j] -= $A[$i][$j] * $factor;
+                    }
+                }
+            }
+        }
+
+        // Mengambil solusi dari matriks augmented
+        $sol = [];
+        for ($i = 0; $i < $n; $i++) {
+            $sol[] = $A[$i][$n];
+        }
+
+        return $sol;
+    }
 }
