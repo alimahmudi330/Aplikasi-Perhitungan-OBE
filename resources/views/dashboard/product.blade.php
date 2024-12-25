@@ -73,11 +73,9 @@
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                        <a class="nav-link active" aria-current="page" href="/login">Login Admin</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/register">Registrasi</a>
-                    </li>
+
                 </ul>
             </div>
         </div>

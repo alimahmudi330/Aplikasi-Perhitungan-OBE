@@ -36,7 +36,7 @@
                     <!-- Form Registrasi -->
                     <form action="{{ route('register') }}" method="POST" id="registrationForm">
                         @csrf <!-- Token CSRF untuk keamanan -->
-                        
+
                         <!-- Input untuk Nama Lengkap -->
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingName" name="name" placeholder="Nama Lengkap" required>
